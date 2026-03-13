@@ -180,6 +180,172 @@ a {
   gap: 38px;
 }
 
+.slideshow {
+  position: relative;
+  width: 100%;
+  height: 415px;
+  border-radius: $radius-large;
+  overflow: hidden;
+  background: #d9d9d9;
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    animation: slide-fade 260ms ease;
+  }
+
+  &__arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 0;
+    background: transparent;
+    color: $white;
+    font-size: clamp(2rem, 0.85rem + 2.6vw, 4.2rem);
+    font-weight: 600;
+    line-height: 1;
+    cursor: pointer;
+    padding: 10px;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.55);
+  }
+
+  &__arrow--left {
+    left: 14px;
+  }
+
+  &__arrow--right {
+    right: 14px;
+  }
+
+  &__counter {
+    position: absolute;
+    left: 50%;
+    bottom: 24px;
+    transform: translateX(-50%);
+    margin: 0;
+    color: $white;
+    font-size: 1.12rem;
+    font-weight: 500;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.55);
+  }
+}
+
+.lodging-page {
+  display: grid;
+  gap: 24px;
+
+  &__summary {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  &__title {
+    margin: 0;
+    color: $brand-color;
+    font-size: clamp(1.2rem, 0.85rem + 0.85vw, 2.25rem);
+    font-weight: 500;
+  }
+
+  &__location {
+    margin: 8px 0 0;
+    font-size: clamp(0.88rem, 0.8rem + 0.18vw, 1.12rem);
+    font-weight: 500;
+  }
+
+  &__tags {
+    margin: 20px 0 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    li {
+      min-width: 115px;
+      border-radius: 10px;
+      background: $brand-color;
+      color: $white;
+      font-size: 0.88rem;
+      font-weight: 700;
+      text-align: center;
+      padding: 4px 12px 5px;
+    }
+  }
+
+  &__host-panel {
+    display: grid;
+    gap: 22px;
+    justify-items: end;
+  }
+
+  &__host {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    p {
+      margin: 0;
+      color: $brand-color;
+      font-size: 1.12rem;
+      font-weight: 500;
+      text-align: right;
+      display: grid;
+      line-height: 1.35;
+    }
+
+    img {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+  }
+
+  &__rating {
+    display: flex;
+    gap: 8px;
+  }
+
+  &__star {
+    color: #e3e3e3;
+    font-size: 1.6rem;
+    line-height: 1;
+  }
+
+  &__star--active {
+    color: $brand-color;
+  }
+
+  &__details {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 76px;
+
+    .collapse {
+      &__header {
+        font-size: 1.12rem;
+      }
+
+      &__content {
+        p,
+        ul {
+          margin: 0;
+          padding: 20px;
+          line-height: 1.45;
+          color: $text-color;
+        }
+
+        ul {
+          list-style: none;
+        }
+      }
+    }
+  }
+}
+
 .about-collapses {
   width: min(100%, 1023px);
   justify-self: center;
@@ -224,11 +390,16 @@ a {
     background: $light-bg;
     color: $brand-color;
 
-    p {
+    p,
+    ul {
       margin: 0;
       padding: 20px;
       line-height: 1.45;
       color: $text-color;
+    }
+
+    ul {
+      list-style: none;
     }
   }
 
@@ -279,6 +450,16 @@ a {
   }
 }
 
+@keyframes slide-fade {
+  from {
+    opacity: 0.15;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
 .site-footer {
   margin-top: auto;
   background: $black;
@@ -299,6 +480,28 @@ a {
 }
 
 @media (max-width: 992px) {
+  .slideshow {
+    height: 320px;
+  }
+
+  .lodging-page {
+    &__summary {
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    &__host-panel {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    &__details {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+  }
+
   .lodgings-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     padding: 30px;
@@ -335,6 +538,97 @@ a {
 
   .home-page {
     gap: 22px;
+  }
+
+  .slideshow {
+    height: 255px;
+    border-radius: 10px;
+
+    &__arrow {
+      font-size: 1.8rem;
+      padding: 8px;
+    }
+
+    &__arrow--left {
+      left: 6px;
+    }
+
+    &__arrow--right {
+      right: 6px;
+    }
+
+    &__counter {
+      display: none;
+    }
+  }
+
+  .lodging-page {
+    gap: 16px;
+
+    &__title {
+      font-size: 1.12rem;
+    }
+
+    &__location {
+      margin-top: 6px;
+      font-size: 0.88rem;
+    }
+
+    &__tags {
+      margin-top: 10px;
+      gap: 8px;
+
+      li {
+        min-width: 84px;
+        font-size: 0.62rem;
+        border-radius: 5px;
+        padding: 5px 8px;
+      }
+    }
+
+    &__host-panel {
+      gap: 0;
+    }
+
+    &__host {
+      gap: 10px;
+
+      p {
+        font-size: 0.75rem;
+      }
+
+      img {
+        width: 32px;
+        height: 32px;
+      }
+    }
+
+    &__rating {
+      gap: 4px;
+    }
+
+    &__star {
+      font-size: 1rem;
+    }
+
+    &__details {
+      gap: 20px;
+
+      .collapse {
+        &__header {
+          font-size: 0.82rem;
+          padding: 10px 12px;
+        }
+
+        &__content {
+          p,
+          ul {
+            padding: 16px 12px;
+            font-size: 0.75rem;
+          }
+        }
+      }
+    }
   }
 
   .lodgings-grid {
