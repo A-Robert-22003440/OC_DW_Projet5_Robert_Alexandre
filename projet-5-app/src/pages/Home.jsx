@@ -1,9 +1,9 @@
 import Banner from '../components/Banner'
 import Card from '../components/Card'
 import logements from '../data/logements.json'
+import homeBannerImage from '../assets/IMG_home.png'
 
-const HOME_BANNER_IMAGE =
-  'https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-20-1.jpg'
+const HOME_BANNER_IMAGE = homeBannerImage
 
 function Home() {
   return (

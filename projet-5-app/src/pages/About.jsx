@@ -1,8 +1,8 @@
 import Banner from '../components/Banner'
 import Collapse from '../components/Collapse'
+import aboutBannerImage from '../assets/IMG_about.png'
 
-const ABOUT_BANNER_IMAGE =
-  'https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-12-1.jpg'
+const ABOUT_BANNER_IMAGE = aboutBannerImage
 
 const ABOUT_ITEMS = [
   {
