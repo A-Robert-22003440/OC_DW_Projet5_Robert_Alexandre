@@ -48,10 +48,12 @@ a {
 
 .site-title {
   margin: 0;
-  color: $brand-color;
-  font-size: clamp(1.95rem, 1.4rem + 1.2vw, 2.8rem);
-  font-weight: 700;
-  line-height: 1;
+  line-height: 0;
+}
+
+.site-logo {
+  width: 210px;
+  height: auto;
 }
 
 .site-nav {
@@ -484,10 +486,10 @@ a {
   text-align: center;
   padding: 66px 16px 28px;
 
-  &__brand {
-    margin: 0;
-    font-size: 1.75rem;
-    font-weight: 700;
+  &__logo {
+    width: 122px;
+    height: auto;
+    filter: brightness(0) invert(1);
   }
 
   &__copy {
@@ -531,6 +533,10 @@ a {
     &__content {
       padding: 20px 20px 18px;
     }
+  }
+
+  .site-logo {
+    width: 145px;
   }
 
   .site-nav {
@@ -682,6 +688,10 @@ a {
 
   .site-footer {
     padding: 66px 16px 58px;
+
+    &__logo {
+      width: 122px;
+    }
 
     &__copy {
       max-width: 135px;
