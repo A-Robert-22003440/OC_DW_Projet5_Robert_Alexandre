@@ -33,7 +33,14 @@ function Slideshow({ pictures, title }) {
             onClick={goToPreviousSlide}
             aria-label="Image precedente"
           >
-            {'<'}
+            <svg
+              className="slideshow__arrow-icon"
+              viewBox="0 0 48 72"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <polyline points="36 6 12 36 36 66" />
+            </svg>
           </button>
           <button
             className="slideshow__arrow slideshow__arrow--right"
@@ -41,7 +48,14 @@ function Slideshow({ pictures, title }) {
             onClick={goToNextSlide}
             aria-label="Image suivante"
           >
-            {'>'}
+            <svg
+              className="slideshow__arrow-icon"
+              viewBox="0 0 48 72"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <polyline points="12 6 36 36 12 66" />
+            </svg>
           </button>
           <p className="slideshow__counter" aria-live="polite">
             {currentIndex + 1}/{pictures.length}
