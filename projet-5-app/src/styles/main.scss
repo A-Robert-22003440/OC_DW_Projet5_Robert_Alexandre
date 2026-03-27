@@ -373,10 +373,27 @@ a {
   }
 
   &__arrow {
-    font-size: 1.35rem;
-    line-height: 1;
+    width: 24px;
+    height: 14px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     transform: rotate(0deg);
     transition: transform 280ms ease;
+  }
+
+  &__arrow-icon {
+    width: 100%;
+    height: 100%;
+    display: block;
+
+    polyline {
+      fill: none;
+      stroke: $white;
+      stroke-width: 3;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
   }
 
   &__body {
@@ -409,7 +426,7 @@ a {
     }
 
     .collapse__arrow {
-      transform: rotate(180deg);
+      transform: rotate(-180deg);
     }
   }
 }

@@ -13,7 +13,14 @@ function Collapse({ title, children }) {
       >
         <span>{title}</span>
         <span className="collapse__arrow" aria-hidden="true">
-          v
+          <svg
+            className="collapse__arrow-icon"
+            viewBox="0 0 24 14"
+            role="presentation"
+            focusable="false"
+          >
+            <polyline points="2 12 12 2 22 12" />
+          </svg>
         </span>
       </button>
       <div className="collapse__body" role="region">
