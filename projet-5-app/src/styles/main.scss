@@ -467,6 +467,10 @@ a {
     font-weight: 500;
   }
 
+  &__title-break {
+    display: none;
+  }
+
   &__link {
     color: $text-color;
     font-size: clamp(0.85rem, 0.68rem + 0.3vw, 1.12rem);
@@ -520,6 +524,10 @@ a {
 
     &__title {
       margin: 113px 0;
+    }
+
+    &__title-break {
+      display: block;
     }
   }
 
